@@ -1,11 +1,132 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ForensicsGPT</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'web/images/logo.svg' %}">
+
+    <link href="{% static 'web/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 </head>
 <body>
-    Hello World
+    
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'web/images/logo.svg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                ForensicsGPT
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Investigation Form</h1>
+            <!-- Case Information -->
+            <div class="mb-3">
+                <label for="caseName" class="form-label">Case Name</label>
+                <input type="text" class="form-control" id="caseName" name="caseName" placeholder="Enter case name">
+            </div>
+
+            <div class="mb-3">
+                <label for="investigatorName" class="form-label">Investigator's Name</label>
+                <input type="text" class="form-control" id="investigatorName" name="investigatorName" placeholder="Enter your name">
+            </div>
+
+            <div class="mb-3">
+                <label for="caseDate" class="form-label">Date of Investigation</label>
+                <input type="text" class="form-control" id="caseDate" name="caseDate" placeholder="Enter the date of investigation">
+            </div>
+
+            <div class="mb-3">
+                <label for="caseLocation" class="form-label">Location</label>
+                <input type="text" class="form-control" id="caseLocation" name="caseLocation" placeholder="Enter your location">
+            </div>
+
+            <!-- Device Information -->
+            <h2 class="mt-4">Device Information</h2>
+            <div class="mb-3">
+                <label for="deviceType" class="form-label">Device Type</label>
+                <select class="form-select" id="deviceType" name="deviceType">
+                    <option selected disabled>Choose device type</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Mobile Phone">Mobile Phone</option>
+                    <option value="USB Drive">USB Drive</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="operatingSystem" class="form-label">Operating System</label>
+                <input type="text" class="form-control" id="operatingSystem" name="operatingSystem" placeholder="Enter the operating system">
+            </div>
+
+            <div class="mb-3">
+                <label for="serialNumber" class="form-label">Serial Number</label>
+                <input type="text" class="form-control" id="serialNumber" name="serialNumber" placeholder="Enter serial number">
+            </div>
+
+            <div class="mb-3">
+                <label for="deviceStatus" class="form-label">Device Status</label>
+                <input type="text" class="form-control" id="deviceStatus" name="deviceStatus" placeholder="Enter device status">
+            </div>
+
+            <div class="mb-3">
+                <label for="accessConditions" class="form-label">Access Conditions</label>
+                <select class="form-select" id="accessConditions" name="accessConditions">
+                    <option selected disabled>Choose access conditions</option>
+                    <option value="Password-protected">Password-protected</option>
+                    <option value="Encrypted">Encrypted</option>
+                    <option value="No security measures">No security measures</option>
+                </select>
+            </div>
+
+            <!-- Evidence Details -->
+            <h2 class="mt-4">Evidence Details</h2>
+            <div class="mb-3">
+                <label for="evidenceSource" class="form-label">Evidence Source</label>
+                <input type="text" class="form-control" id="evidenceSource" name="evidenceSource" placeholder="Enter evidence source">
+            </div>
+
+            <div class="mb-3">
+                <label for="evidenceType" class="form-label">Type of Evidence</label>
+                <textarea class="form-control" id="evidenceType" name="evidenceType" rows="3" placeholder="Describe evidence (e.g., files, emails)"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="timeframe" class="form-label">Timeframe</label>
+                <input type="text" class="form-control" id="timeframe" name="timeframe" placeholder="Enter relevant date range (e.g., Dec 1 - Dec 5)">
+            </div>
+
+            <!-- <button id="addEvidenceButton" type="button" class="btn btn-light">Add</button> -->
+
+            <!-- Suspected Violations -->
+            <h2 class="mt-4">Suspected Violations</h2>
+            <div class="mb-3">
+                <label for="violations" class="form-label">Describe Violations</label>
+                <textarea class="form-control" id="violations" name="violations" rows="3" placeholder="Provide details of suspected violations"></textarea>
+            </div>
+
+            <!-- Findings -->
+            <h1 class="mb-4">Summary of Findings</h1>
+            <div class="mb-3">
+                <label for="summary" class="form-label">Summary of Findings</label>
+                <textarea class="form-control" id="summary" name="summary" rows="3" placeholder="Provide summary of findings."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="evidence" class="form-label">List of Evidence</label>
+                <textarea class="form-control" id="evidence" name="evidence" rows="3" placeholder="Provide list of evidence."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-4">
+                <button id="submitbutton" type="submit" class="btn btn-primary">Submit Form</button>
+            </div>
+    </div>
+
+    
+    <script src="{% static 'web/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'web/js/app.js' %}"></script>
 </body>
 </html>
