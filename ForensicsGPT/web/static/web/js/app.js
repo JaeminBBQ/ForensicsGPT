@@ -40,6 +40,8 @@ submitbutton.onclick = async () => {
     body_data.append("summary", summary.value);
     body_data.append("evidence", evidence.value);
 
+    let pagebody = document.getElementById("pagebody");
+    pagebody.innerHTML = "";
 
     let tableParam = {
         method: "POST",
@@ -50,4 +52,8 @@ submitbutton.onclick = async () => {
     const res = await fetch(url, tableParam);
 
     let json_data = await res.json();
+
+    pagebody.append(json_data["response"])
+
+    console.log(json_data);
 }
